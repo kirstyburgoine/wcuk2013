@@ -1,0 +1,49 @@
+
+/* =Flexible Columns
+----------------------------------------------- */
+
+	/* Added for flexible content columns */
+
+	.flexible-row .column { float: left; }
+	.flexible-row .column img { max-width: 100%; }
+
+	/* Force all to one column layout on mobile */
+	.flexible-row .span1,
+	.flexible-row .span2,
+	.flexible-row .span3,
+	.flexible-row .span4 { width: 100%; }
+
+/* Minimum width of 480 pixels. */
+@media screen and (min-width: 480px) {
+
+	.flexible-row .span1 { width: 100%; }
+
+	/* forces all into two column layout */
+	.flexible-row .span2,
+	.flexible-row .span3,
+	.flexible-row .span4 { width: 48%; margin-right: 4%; }
+
+	/* two column layout */
+	.flexible-row .span2:last-child { margin-right: 0; }
+
+	/* three column layout */
+	.flexible-row .span3:nth-child(2) { margin-right: 0; }
+	.flexible-row .span3:last-child { margin: 0 auto; float: none; } /* Centres 3rd column below */
+
+	/* four column layout */
+	.flexible-row .span4:nth-child(even) { margin-right: 0; }
+
+
+}
+
+/* Minimum width of 960 pixels. */
+@media screen and (min-width: 960px) {
+
+	/* Three and four columns - should now be all on one line */
+	.flexible-row .span3 { width: 30%; margin-right: 5%;}
+	.flexible-row .span3:nth-child(2) { margin-right: 5%; } /* adds margin back */
+	.flexible-row .span3:last-child { clear: none; float: left;}
+	
+	.flexible-row .span4 { width: 22%; margin-right: 4%; }
+	.flexible-row .span4:nth-child(2) { margin-right: 4%; } /* cancels out all 2nd child margins of 0 */
+}
